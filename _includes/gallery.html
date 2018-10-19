@@ -1,0 +1,11 @@
+			<div class="fh5co-gallery">
+				{% for item in site.data.gallery %}
+					<a class="gallery-item" href="single.html">
+						<img src="/images/{{item.url}}" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
+						<span class="overlay">
+							<h2>{{item.heading}}</h2>
+							<span>{{item.number}}</span>
+						</span>
+					</a>
+				{% endfor %}
+			</div>
