@@ -7,13 +7,13 @@ layout: default
 		<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
 		<aside id="fh5co-aside" role="complementary" class="border">
 
-			<h1 id="fh5co-logo"><a href="index.html"><img src="images/logo-colored.png" alt="Free HTML5 Bootstrap Website Template"></a></h1>
+			<h1 id="fh5co-logo"><a href="/"><img src="/images/logo-colored.png" alt="Free HTML5 Bootstrap Website Template"></a></h1>
 			<nav id="fh5co-main-menu" role="navigation">
 				<ul>
-					<li><a href="index.html">Home</a></li>
-					<li><a href="portfolio.html">Photos</a></li>
-					<li class="fh5co-active"><a href="about.html">About</a></li>
-					<li><a href="contact.html">Contact</a></li>
+					<li><a href="/">Home</a></li>
+					<li><a href="/portfolio/">Photos</a></li>
+					<li class="fh5co-active"><a href="/about/">About</a></li>
+					<li><a href="/contact/">Contact</a></li>
 				</ul>
 			</nav>
 
@@ -25,30 +25,28 @@ layout: default
 
 			<div class="fh5co-narrow-content">
 				<div class="row">
-					<div class="col-md-5">
-						<h2 class="fh5co-heading animate-box" data-animate-effect="fadeInLeft">I'm John Doe a Photographer</h2>
-						<p class="fh5co-lead animate-box" data-animate-effect="fadeInLeft">Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-						<p class="animate-box" data-animate-effect="fadeInLeft"> Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
-					</div>
-					<div class="col-md-6 col-md-push-1 animate-box" data-animate-effect="fadeInLeft">
-						<img src="images/img_1.jpg" alt="Free HTML5 Bootstrap Template" class="img-responsive"> 
-					</div>
+					{% for item in site.data.about %}
+						<div class="col-md-5">
+							<h2 class="fh5co-heading animate-box" data-animate-effect="fadeInLeft">{{item.title}}</h2>
+							<p class="fh5co-lead animate-box" data-animate-effect="fadeInLeft">{{item.description1}}</p>
+							<p class="animate-box" data-animate-effect="fadeInLeft">{{item.description2}}</p>
+						</div>
+					{% endfor %}
+					{% for item in site.data.about %}
+						<div class="col-md-6 col-md-push-1 animate-box" data-animate-effect="fadeInLeft">
+							<img src="/images/{{item.url}}" alt="Free HTML5 Bootstrap Template" class="img-responsive">
+						</div>
+					{% endfor %}
 				</div>
 				
 			</div>
 
-			<div class="fh5co-narrow-content  animate-box fh5co-border-bottom" data-animate-effect="fadeInLeft">
-				<h2 class="fh5co-heading" >Photographers</span></h2>
-
-					{% include team.html %}
-			</div>
+			{% include team.html %}
 			
-			<div class="fh5co-narrow-content fh5co-border-bottom">
-				<h2 class="fh5co-heading animate-box" data-animate-effect="fadeInLeft">This Is What <span>We Love To Do</span></h2>
-
+				<div class="fh5co-narrow-content fh5co-border-bottom">
+					<h2 class="fh5co-heading animate-box" data-animate-effect="fadeInLeft">This Is What <span>We Love To Do</span></h2>
 						{% include services.html %}
-
-			</div>
+				</div>
 		
 
 			{% include get-in-touch.html %}
