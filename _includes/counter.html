@@ -1,0 +1,12 @@
+<div class="fh5co-counters" style="background-image: url(/images/hero.jpg);" data-stellar-background-ratio="0.5" id="counter-animate">
+	<div class="fh5co-narrow-content animate-box">
+		<div class="row">
+			{% for item in site.data.counter %}
+				<div class="col-md-4 text-center">
+					<span class="fh5co-counter js-counter" data-from="0" data-to="{{item.data-to}}" data-speed="5000" data-refresh-interval="50"></span>
+					<span class="fh5co-counter-label">{{item.label}}</span>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+</div>

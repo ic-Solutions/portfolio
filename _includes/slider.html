@@ -1,0 +1,15 @@
+<div class="owl-carousel-fullwidth animate-box" data-animate-effect="fadeInLeft">
+    {% for item in site.data.slider %}
+	    <div class="item">
+	    	<figure>
+	    		<img src="/images/{{item.url}}" alt="Free HTML5 Bootstrap Template">
+	    	</figure>
+	      	<p class="text-center quote">
+	      		&ldquo;{{item.content}}&rdquo; 
+	      		<cite class="author">
+	      			&mdash; {{item.author}}
+	      		</cite>
+	      	</p>
+	    </div>
+    {% endfor %}
+</div>
